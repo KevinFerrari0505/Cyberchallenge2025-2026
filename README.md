@@ -1,5 +1,6 @@
 # 🛡️ CyberChallenge 2025–2026  
 ### Percorso di formazione in Cybersecurity  
+<img width="784" height="443" alt="pub_crop_thumb_Immagine_a0e66b7c-9cb0-414b-a4cb-68557e8e5e95" src="https://github.com/user-attachments/assets/4b4447cb-edfa-4d1c-9c84-f06b92fbfb32" />
 
 ---
 
