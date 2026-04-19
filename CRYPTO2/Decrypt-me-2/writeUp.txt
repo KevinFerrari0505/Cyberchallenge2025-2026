@@ -1,0 +1,7 @@
+Anche se n è enorme (2048 bit) e non possiamo fattorizzarlo, la vera vulnerabilità rimane la stessa di prima:
+ogni carattere è cifrato separatamente.
+Questo significa che esiste solo un numero limitato di possibili ciphertext
+(uno per ogni carattere ASCII, circa 96 caratteri stampabili). 
+Allora invece di decifrare, faccio il contrario
+cifro tutti i possibili caratteri con la chiave pubblica (e, n) e costruisco un dizionario.
+Per ogni elemento della lista c, se sta nel dizionario, allora lo aggiungo alla flag.
