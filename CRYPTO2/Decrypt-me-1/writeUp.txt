@@ -1,0 +1,8 @@
+Semplicemente per risolvere la challenge bisogna decriptare ogni numero C.
+La formula per decryptare C è 𝑀 = 𝐶^𝑑 𝑚𝑜𝑑 𝑛.
+Per trovare d devo trovare prima p e q e dato che n è molto piccolo, su python
+si può usare la funzione factorint(n) che me li trova.
+Poi devo calcolare il fattore di eulero (p-1) * (q-1) perchè la d devo trovarla
+facendo sì che (d * e) mod fattoreDiEulero mi dia 1, quindi faccio l'inverso,
+cioè d = e^-1 mod fattoreDiEulero.
+Serve la seguente libreria sudo apt install python3-sympy
