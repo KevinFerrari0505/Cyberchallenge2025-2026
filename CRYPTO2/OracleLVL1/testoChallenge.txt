@@ -1,0 +1,7 @@
+A 4 levels RSA challenge, from easy to hard.
+
+Let's start with level 1...
+
+This is a remote challenge, you can connect to the service with:
+
+nc oracle.challs.cyberchallenge.it 9041
