@@ -1,9 +1,15 @@
-Ora a differenza di smallKey la differenza nel codice è questa:
+Ora, a differenza di smallKey, il codice cambia nella generazione dell’esponente segreto:
+
 def gen_key():
     s = random.randint(0, 2**nbits)
-    return s, pow(g,s,p)
+    return s, pow(g, s, p)
 
-Prima era solo 0,nbits ora invece è il doppio e non possiamo applicare la stessa
-procedura di prima perchè non ce la faremo mai.
-Una vulnerabilità è il fatto che p-1 è il prodotto di tutti i numeri primi a 2 a 1019
-Questo si può fattorizzare
+Prima l’intervallo era più ristretto, mentre ora è più grande (0, 2^nbits), rendendo il brute force impraticabile.
+
+Una vulnerabilità fondamentale è che p−1 è completamente fattorizzabile in piccoli primi (fino a 1019). Questo permette di applicare l’attacco di Pohlig–Hellman, che riduce il problema del logaritmo discreto in più sottoproblemi su gruppi piccoli.
+
+Con questo metodo si ricava l’esponente segreto a, che permette di calcolare:
+
+shared_secret=pubB^a mod p
+
+e successivamente ottenere la chiave AES per decifrare la flag.
