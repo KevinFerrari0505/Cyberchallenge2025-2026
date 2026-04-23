@@ -1,0 +1,8 @@
+In questa challenge parliamo di scambio di chiavi, in particolare dell'uso del protocollo 
+Diffie-Hellman Protocol in cui ci vengono forniti p, g, la chiave pubblica di A e B e 
+la flag criptata.
+Per risolvere questa challenge, bisogna trovare a e b che sono i parametri che si scelgono
+i due interlocutori per poi mandarsi corrispettivamente g^a mod p e g^b mod p.
+a e b li ottengo facendo un for fino a quanto mi pare e se g^i mod p è == pubA allora ho trovato a,
+oppure g^i mod p è == pubB allora ho trovato b.
+Infine faccio g^(a*b) mod p e applico l'AES per trovare la flag. 
