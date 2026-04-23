@@ -1,0 +1,9 @@
+Ora a differenza di smallKey la differenza nel codice è questa:
+def gen_key():
+    s = random.randint(0, 2**nbits)
+    return s, pow(g,s,p)
+
+Prima era solo 0,nbits ora invece è il doppio e non possiamo applicare la stessa
+procedura di prima perchè non ce la faremo mai.
+Una vulnerabilità è il fatto che p-1 è il prodotto di tutti i numeri primi a 2 a 1019
+Questo si può fattorizzare
