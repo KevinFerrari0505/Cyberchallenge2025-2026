@@ -1,0 +1,5 @@
+Good Carol's doesn't send evil christmas messages.
+
+This is a remote service, you can access with:
+
+nc carol.challs.cyberchallenge.it 9045
