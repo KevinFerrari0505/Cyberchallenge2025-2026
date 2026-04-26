@@ -1,0 +1,11 @@
+Eseguendo il seguente comando 
+tshark -r s3cret.pcapng -T fields -e frame.protocols | sort | uniq -c | sort -rn
+Avremo come output il seguente:
+4915 sll:ethertype:ip:tcp
+1158 sll:ethertype:ip:tcp:tls:tls
+  33 sll:ethertype:ip:tcp:ssh
+  24 sll:ethertype:ip:tcp:data
+
+Controllando i pacchetti ssh si nota che un webServer è in ascolto sulla porta
+22 e seguendo il tcp stream il client ha ottenuto una foto chiamata data.jpg 
+Estraendola, si ottiene l'immagine con la flag.
