@@ -1,0 +1,15 @@
+This is a 6 levels challenge, solve a level will unlock the next one.
+
+Level 1!
+
+We suspect that Leopardo Company has been attacked. We provide you with a capture containing all the suspicious traffic coming fromthe Internet and accessing their public web site.
+
+Please analyze the traffic and give us evidence of each relevant phase of the attack. Understanding the above steps requires following the chronological sequence of registered packets.
+
+We will guide you in detecting them, and each given evidence will grant you a handsome reward...
+
+If you feel ready, open the attached file and gain a first reward just by looking at the file comment.
+
+$ sha256sum leopardo.pcapng
+
+9b13b78d404c386c87b269e3d25b28644e4d2708ad4f03c85fc889c7f561395d

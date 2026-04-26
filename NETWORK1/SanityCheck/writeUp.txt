@@ -1,0 +1,1 @@
+Per avere la flag, aprire il file, andare su statistics, premere capture file properties e sotto si trova la flag
