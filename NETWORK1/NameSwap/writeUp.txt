@@ -1,0 +1,3 @@
+Il pacchetto in questione che ci interessa è il numero 5849.
+Al suo interno è presenta la flag se si segue il suo http stream, con anche
+una piccola parte che ci serve per la challenge del livello 6.
