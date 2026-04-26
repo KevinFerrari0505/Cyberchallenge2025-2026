@@ -1,5 +1,11 @@
 Level 3!
 
-We suspect that Leopardo Company has been attacked. We provide you with a capture containing all the suspicious traffic coming from the Internet and accessing their public web site. Please analyze the traffic and give us evidence of each relevant phase of the attack. Understanding the above steps requires following the chronological sequence of registered packets. We will guide you in detecting them, and each given evidence will grant you a handsome reward...
+We suspect that Leopardo Company has been attacked. 
+We provide you with a capture containing all the suspicious traffic coming from the Internet and accessing their public web site. 
+Please analyze the traffic and give us evidence of each relevant phase of the attack. 
+Understanding the above steps requires following the chronological sequence of registered packets. 
+We will guide you in detecting them, and each given evidence will grant you a handsome reward...
 
-After analyzing the public website, we need to understand if the web host only runs a web server. They told us that other services are switched off, and even if they were accidentally running, they do not expose any useful data. What do you think? Please confirm ASAP, it is important for your (and their) future career.
+After analyzing the public website, we need to understand if the web host only runs a web server. 
+They told us that other services are switched off, and even if they were accidentally running, they do not expose any useful data. 
+What do you think? Please confirm ASAP, it is important for your (and their) future career.
