@@ -1,0 +1,5 @@
+Level 4!
+
+We suspect that Leopardo Company has been attacked. We provide you with a capture containing all the suspicious traffic coming from the Internet and accessing their public web site. Please analyze the traffic and give us evidence of each relevant phase of the attack. Understanding the above steps requires following the chronological sequence of registered packets. We will guide you in detecting them, and each given evidence will grant you a handsome reward...
+
+A web server can run multiple sites on multiple ports. Robots file is a standard. What could go wrong? Please analyze the discovered evidence and give us feedback if they are exploited by the attacker.

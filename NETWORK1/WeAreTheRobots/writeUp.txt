@@ -1,0 +1,6 @@
+Ho usato i consigli ops.
+Il primo diceva che i pacchetti da guardare erano >= >= 3978 e <= 4202.
+Poi il terzo consiglio diceva che l'attaccante aveva individuato l'utente admin2.
+Quindi ho creato un unico filtro su wireshark, cioè questo: 
+http.request.uri contains admin2 && frame.number >= 3978 && frame.number <= 4202.
+La flag è scritta nella parte http del pacchetto sullo user agent.
