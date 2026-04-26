@@ -7,5 +7,5 @@ Avremo come output il seguente:
   24 sll:ethertype:ip:tcp:data
 
 Controllando i pacchetti ssh si nota che un webServer è in ascolto sulla porta
-22 e seguendo il tcp stream il client ha ottenuto una foto chiamata data.jpg 
+22 e seguendo il tcp stream si può notare che il client ha ottenuto una foto chiamata data.jpg 
 Estraendola, si ottiene l'immagine con la flag.
