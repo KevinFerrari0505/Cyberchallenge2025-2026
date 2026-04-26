@@ -1,0 +1,8 @@
+In questa challenge una volta cliccato il sito vi aprirà una specie di minigame
+in cui dovete cercare di fare arrivare l'aereo alla pista di atterraggio.
+Per poter far questo vi servono dei comandi che potete trovare estraendo
+tutto il traffico http del file wireshark e analizzandoli troverete dei comandi
+per fare muovere l'aereo (TURNL, TURNR, DIVE, ..).
+Una volta raggiunta la pista non succederà nulla, bisognerà "spammare" il comando
+brake fino a che attidude non arrivi a 0 e poi si aprirà una foto di un film 
+con sotto la flag.
