@@ -1,0 +1,7 @@
+Bob has now learned to distinguish Alice from Carol
+
+and will not fall into the same trap again.
+
+This is a remote service, you can access with:
+
+nc carol.challs.cyberchallenge.it 9046
