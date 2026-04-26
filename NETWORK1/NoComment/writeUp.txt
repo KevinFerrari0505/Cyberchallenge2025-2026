@@ -1,0 +1,1 @@
+Per avere la flag, basta estrarre tutti i pacchetti della connessione http tra il sito web e il browser. Ci sarà un file api.js in cui ci sarà sia la flag crittograta che il codice per decriptarla. Si avvia e si ottiene la flag.
