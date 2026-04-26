@@ -1,0 +1,5 @@
+Per trovare la flag, bisogna capire il web server in ascolto su che porta è.
+Se notiamo il traffico tcp, è presente un traffico syn/ack fatto sulla porta
+5432. Bisogna decodificare il traffico come http, impostare il filtro 
+http && tcp.port = 5432, estrarre tutti gli oggetti della stream http e 
+la flag sta dentro un file chiamato robots.txt che è decodificata in base 64
