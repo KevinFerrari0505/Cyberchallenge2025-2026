@@ -1,0 +1,11 @@
+In questa challenge la prima cosa che ho fatto per analizzare il traffico, dato che c'è molto http,
+è stato quello di estrarre come al solito gli oggetti http.
+Guardando bene anche l'http stream, notiamo che la pagina web presenta un bottone che quando premuto,
+chiama una funzione c e fa una get a backend.php, la cui risposta viene decodificata con la 
+funzione r(data, 13), che sarebbe ROT13 (un cifrario).
+Quindi quello che bisogna fare è prendere la risposta di backend.php ad esempio p = 4, con scritto:
+qngn:grkg/synt;onfr64,D0AWIUgxo3qhq2SlMN==
+Applicando il ROT13(solo alle lettere, i caratteri speciali restano uguali) ottengo:
+data:text/flag;base64,Q0NJVHtkb3dud2FyZA==
+La parte dopo la virgola è scritta in base64 che decodificandola ottengo CCIT{downward
+Ripeto la stessa procedura per p=5 e p=6 ottenendo gli altri due pezzi rimanenti della flag.
