@@ -1,0 +1,3 @@
+Help the VIctim of data exfiltration.
+
+Notice that in this challenge the flag is in the format ccit{}.

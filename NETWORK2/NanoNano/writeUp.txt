@@ -1,0 +1,10 @@
+In questa challenge ci sarà semplicemente un traffico tcp molto breve.
+Seguendolo, troveremo un testo poetico/romantico, in cui l'utente digitando
+il seguente comando:
+vi -c ':%s/sweet/}/g' -c ':%s/babe/{/g' flag.txt
+Sostituisce nel testo al posto di sweet } e al posto di babe {.
+Dopodichè l'utente naviga il file con una serie di comandi :numero:riga, 
+saltando avanti e indietro in modo non casuale:
+:17 → :25 → :5 → :13 → :27 → :35 → :7
+Poi si nota che raccoglie frammenti di testo da posizioni specifiche. 
+Combinando i simboli ottenuti dalle sostituzioni, si ottiene la flag.
