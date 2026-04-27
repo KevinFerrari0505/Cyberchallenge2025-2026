@@ -1,0 +1,17 @@
+In questa challenge il traffico cattura una sessione HTTP tra due host docker
+Si tratta di una piccola web app chiamata "unncessary censorhip v0.1
+Estraendo l'oggetto HTTP /, il form rivela
+-campo s: una stringa segreta (password)
+-campo mt: un ciphertext in Base64 (file fornito) che si trova seguendo il
+traffico tcp
+Il server ha risposto con ooooops, internal server error, cioè bad decrypt.
+Il client aveva usato di default -md md5, ma la cifratura era stata fatta 
+con -md sha256.
+Quindi per decryptare correttamente bisogna scrivere il seguente comando:
+openssl enc -d -aes-256-cbc -a \
+  -in ciphertext.b64 \
+  -pass pass:138dbd41a0c5ef43cbf529b03d814d7c \
+  -md sha256 \
+  -out decrypted.xcf
+e il risultato sarà un file formato xcf con dentro i metadati del layer di testo
+GIMP con la flag.
