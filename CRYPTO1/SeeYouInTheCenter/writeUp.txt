@@ -1,0 +1,19 @@
+In questa challenge il plaintext viene cifrato due volte con una variante di
+vigenere mod 128.
+Entrambe le sottochiavi sono 4 lettere lowecase, cioè lo spazio di ricerca totale
+è 26^8, il che vuol dire che fare brute force è impossibile.
+La vulnerabilità è che cifrare due volte con chiavi indipendenti non 
+raddoppia la sicurezza. E' il classico attacco meet-in-the-middle:
+enc(enc(P, k1), k2) = C
+        ↓
+enc(P, k1) = dec(C, k2) = D
+
+Si calcola D da entrambi i lati e si cerca la collissione in mezzo, cioè 
+cercare la coppia (k1,k2) insieme e si cerca un valore intermedio D che combaci
+da entrambe le direzioni.
+Visivamente è così:
+P  →[enc k1]→  D  →[enc k2]→  C
+               ↑
+           "il mezzo"
+Così ho 900 mila tentativi, rispetto ai miliardi che avevo prima.
+La flag è la KEY, ovvero le 8 lettere lowercase che formano le due sottochiavi.
