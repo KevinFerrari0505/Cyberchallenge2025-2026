@@ -1,1 +1,0 @@
-You can leak the canary via the error messages, printed when you send questions longer than 16 characters.
