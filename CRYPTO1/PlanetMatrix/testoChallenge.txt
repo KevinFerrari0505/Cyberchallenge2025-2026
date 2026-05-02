@@ -1,0 +1,5 @@
+Google and the images below will help you to translate the following ciphertext:
+
+CGKRKRLANXBERXBHLGAUVSZMQODKGB
+
+The flag is NOT standard: put the plaintext into CCIT{ }
