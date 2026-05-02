@@ -1,0 +1,7 @@
+Quando sei bloccato sulla risoluzione di una challenge, puoi provare ad aprire i suggerimenti (hint) che possono essere presenti.
+
+Stai attento: i suggerimenti possono costare dei punti!
+
+La flag è all'interno del suggerimento di questa challenge.
+
+(Avendola risolta, non ho la flag perchè una volta mandata l'Hint non posso più aprirlo)
