@@ -1,0 +1,2 @@
+Per risolvere, basta usare mtp e digitare il nome del file:
+mtp message.enc
