@@ -1,0 +1,11 @@
+In aggiunta ai siti web, alcune challenge (tipicamente di categoria crypto o binary) 
+potrebbero richiedere di interagire con servizi remoti da linea di comando, 
+esposti tramite protocollo tcp.
+
+Per questo tipo di challenge ti verrà fornito l'indirizzo del server e la porta su cui il servizio ascolta. 
+Per interagire con tali servizi dovrai usare il comando nc del tuo terminale 
+(netcat).
+
+Per ottenere la flag di questa challenge è sufficiente collegarsi al servizio remoto da un terminale con il comando:
+
+nc tcp.challs.olicyber.it 12210
