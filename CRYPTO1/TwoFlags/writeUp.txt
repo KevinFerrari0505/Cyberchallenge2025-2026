@@ -1,0 +1,6 @@
+In questa challenge le due immagini sono cifrate con la stessa chiave via XOR.
+L'attacco è il seguente:
+enc1 XOR enc2 = (flag XOR key) XOR (notflag XOR key) = flag XOR notflag
+La key sparisce, rimane solo la differenza tra le due immagini originali, che 
+rivela il contenuto di entrambe.
+La flag è nell'immagine xor_result.png
