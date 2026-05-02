@@ -1,0 +1,5 @@
+Oltre ai file allegati, in alcune challenge (tipicamente di categoria web) può essere necessario analizzare (in modo legittimo) dinamicamente le vulnerabilità di siti web.
+
+Per questa challenge la flag è semplicemente all'interno di questo sito web.
+
+http://sito.challs.olicyber.it/
