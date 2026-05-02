@@ -1,0 +1,5 @@
+Solitamente le challenge richiedono di analizzare uno o più file, 
+gli allegati sono disponibili per il download nella sezione Attachments. 
+Assicurati di guardarli per risolvere più agilmente le challenge.
+
+In questa challenge la flag è semplicemente all'interno del file di testo allegato.
