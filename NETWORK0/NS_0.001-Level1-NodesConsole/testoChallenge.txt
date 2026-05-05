@@ -1,0 +1,5 @@
+After you have executed the docker compose with make up, 
+list the running containers and execute an interactive shell (i.e., /bin/bash) 
+on node1 for getting the flag.
+
+Notice that you require this command for accessing unconfigured nodes and solving the next challenges.

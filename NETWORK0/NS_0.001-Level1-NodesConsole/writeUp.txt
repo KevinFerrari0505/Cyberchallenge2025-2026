@@ -1,0 +1,11 @@
+Ora come dice la challenge, dobbiamo:
+-avviare lo scenario
+-trovare il container node1
+-Entrarci dentro con una shell
+-cercare la flag
+
+Quindi per trovare il container ci stampiamo la lista con docker ps.
+Mi memorizzo il containerID del nodo1 (nel mio caso 273f6d3c0cd5, non so se è uguale per tutti, idk)
+Per eseguire la shell, devo avviare il seguente comando:
+docker exec -it 273f6d3c0cd5 /bin/bash
+Una volta avviato, mi darà la flag a schermo.
