@@ -1,0 +1,5 @@
+After you have solved the level2, two new services are listening for connections on node1.
+
+They use the same application protocol. You can identify it referring to the well-known port.
+
+Use the corresponding client for connecting to the two services on node1 from the HOST node.
