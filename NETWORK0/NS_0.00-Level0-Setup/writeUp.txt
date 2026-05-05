@@ -1,0 +1,12 @@
+Prima di tutto, bisogna installare docker-compose con questi comandi:
+sudo apt update
+sudo apt install docker-compose -y
+Poi verificate se l'installazione è andata a buon fine con il seguente comando:
+docker-compose --version
+Dopo bisogna costruire l'immagine con il seguente comando:
+make up
+Una volta effettuato, se digitate il seguente comando:
+docker ps-a vedrete tutti i container che sono stati creati.
+Per trovare la flag, come dice la challenge, dobbiamo far stampare i logs, che si fa con il seguente comando:
+docker-compose logs
+E vi darà la flag a pezzi.
