@@ -1,0 +1,9 @@
+This picture represents the network layout of the running containers. HOST represents the hosting machine (i.e., the machine running Docker).
+
+Node1 is connected to the HOST node using the private network 192.168.123.0/24.
+
+On each node, a network service is running. It is listening for connections on its own well-known port.
+
+Try to identify the service and use the corresponding client for connecting to this service on node1 from the HOST node.
+
+Remember that the root password is ccit.
