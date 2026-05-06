@@ -28,4 +28,7 @@ Sent 1 packets.
 Analyze the dump of the handshake...
 The flag is CCIT{level4_[ephemeralport]_[destinationport]_[clientstartsequencenumber]}
 
-Basta comporre la flag con i pezzi e il gioco è fatto.
+Per cercare i pezzi della flag, usate questo comando:
+tcpdump -v sul nodo2 su terminale.
+Poi su un altro terminale avviate lo script di nodo1 così vi da tutte le informazioni.
+Infine componete la flag con i pezzi e il gioco è fatto.
