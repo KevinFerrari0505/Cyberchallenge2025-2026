@@ -1,0 +1,9 @@
+Welcome to a series of 5 challenges about XSS,
+
+let's start with the first level!
+
+Goal: get the admin cookie!
+
+You can report an url to the admin big using the form in the header.
+
+Website: http://xss1.challs.cyberchallenge.it/
