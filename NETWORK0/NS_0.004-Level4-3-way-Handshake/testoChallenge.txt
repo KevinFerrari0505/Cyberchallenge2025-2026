@@ -1,0 +1,13 @@
+The ip command is one of the Linux tools for administering the network configuration.
+
+In particular, you can assing an address to an interface using the following syntax:
+
+ip addr add [ipaddress/netmask] dev [devicename] (for removing an existing address ip addr del [ipaddress/netmask] dev [devicename])
+
+For example, you can add to eth0 the address 192.168.100.100 from the 192.168.100.0/24 network using:
+
+ip addr add 192.168.100.100/24 dev eth0
+
+Use this command for configuring the connection between node1 and node2 according to this updated network layout.
+
+After you complete the above task, execute a 3-way handshake from node1 to node2 using the custom script level4 on node1.

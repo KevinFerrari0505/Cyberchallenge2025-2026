@@ -1,0 +1,11 @@
+In questa challenge, come dice il testo, dobbiamo assegnare due indirizzi,
+uno al node1 e uno al node2, come nella foto.
+Quindi per prima cosa entro nel nodo1:
+docker exec -it 674ffc3fdfad /bin/bash
+Assegno l'ip:
+ip addr add 10.0.0.1/24 dev eth1
+Una volta fatto, andiamo sul nodo2:
+docker exec -it e53bd480716b /bin/bash
+e gli assegno l'ip:
+ip addr add 10.0.0.2/24 dev eth0
+
