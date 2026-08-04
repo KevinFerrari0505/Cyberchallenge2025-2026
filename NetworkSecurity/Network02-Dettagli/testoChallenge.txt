@@ -1,0 +1,5 @@
+In questa challenge viene richiesto di analizzare più nel dettaglio alcuni pacchetti. In particolare la flag è nel seguente formato:
+
+flag{Source_MAC_address/data_bytes_length}
+
+Le informazioni necessarie per le flag sono prese dal frame numero 4, il primo contenente i dati della sessione TCP.

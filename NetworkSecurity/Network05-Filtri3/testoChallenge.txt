@@ -1,0 +1,2 @@
+Per risolvere questa challenge è necessaria un'espressione logica che filtri per trovare i pacchetti contenenti dei commenti.
+Il File è sempre quello.

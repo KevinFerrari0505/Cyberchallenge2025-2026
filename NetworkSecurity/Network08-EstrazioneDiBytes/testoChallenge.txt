@@ -1,0 +1,7 @@
+Questa challenge si concentra nell'analizzare ed estrarre i bytes di un determinato pacchetto.
+
+In questa cattura è infatti presente un breve scambio di pacchetti TCP, in particolare è di nostro interesse il frame contenente i dati inviati dall'IP 192.168.100.1 a 192.168.100.2.
+
+Per ottenere la flag è necessario estrarre i bytes di questo pacchetto ed analizzarne il contenuto.
+
+Per maggiori informazioni fare riferimento alla documentazione relativa.

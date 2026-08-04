@@ -1,0 +1,5 @@
+Per risolvere questa challenge è necessaria un'espressione logica che filtri per selezionare solamente i pacchetti contenenti la stringa "Pwn all the things!!!".
+
+La flag andrà poi formattata come da standard: flag{...}.
+
+Il Fil è sempre quello.
