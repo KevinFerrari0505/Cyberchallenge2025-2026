@@ -1,0 +1,34 @@
+In questa challenge, come dice il testo, dobbiamo assegnare due indirizzi,
+uno al node1 e uno al node2, come nella foto.
+Quindi per prima cosa entro nel nodo1:
+docker exec -it 674ffc3fdfad /bin/bash
+Assegno l'ip:
+ip addr add 10.0.0.1/24 dev eth1
+Una volta fatto, andiamo sul nodo2:
+docker exec -it e53bd480716b /bin/bash
+e gli assegno l'ip:
+ip addr add 10.0.0.2/24 dev eth0
+Per testare se funziona, basta fare un ping.
+Ora ritorniamo sul node1, scriviamo level4, lo script che avvia il 3way handshake.
+Dirà questo:
+root@node1:/# level4
+Begin emission:
+.Finished to send 1 packets.
+*
+Received 2 packets, got 1 answers, remaining 0 packets
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
+Begin emission:
+Finished to send 1 packets.
+*
+Received 1 packets, got 1 answers, remaining 0 packets
+.
+Sent 1 packets.
+
+Analyze the dump of the handshake...
+The flag is CCIT{level4_[ephemeralport]_[destinationport]_[clientstartsequencenumber]}
+
+Per cercare i pezzi della flag, usate questo comando:
+tcpdump -v sul nodo2 su terminale.
+Poi su un altro terminale avviate lo script di nodo1 così vi da tutte le informazioni.
+Infine componete la flag con i pezzi e il gioco è fatto.

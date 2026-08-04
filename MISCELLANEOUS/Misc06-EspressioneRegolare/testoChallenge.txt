@@ -1,0 +1,9 @@
+Fino adesso le flag che hai trovato erano univoche e prefissate. In alcuni casi le challenge possono accettare una o più flag identificate da un formato definita da una espressione regolare (regex).
+
+Per questa challenge trova una stringa che corrisponde a questa regex:
+
+/^flag\{[\D]{2}[0][a-z][^0-9][L][\w]{4}[^a-pr-z]{3}[^\d]{2}[\d][b]\}$/
+
+Una volta trovata la stringa corretta inviala inserendola in flag{...}.
+
+Per risolverla prova a cercare uno strumento adatto. Ne puoi trovare molti online come regex101 oppure prova ad usare il modulo di python re.

@@ -1,0 +1,10 @@
+In questa challenge, come dice il testo, mi devo connettere al node1,
+sempre in ssh come avevo fatto con la 3, e devo lasciare il terminale
+di connessione aperto.
+Apro un nuovo terminale, faccio nmap 192.168.123.123 e avendoci l'altro 
+terminale con la connessione aperta, mi rileva non solo la porta ssh aperta,
+ma anche le porte 80 e 8000 che sono http.
+Semplicemente, dato che è http, basta digitare sull'url l'indirizzo e la sua
+corrispettiva porta, trovando di conseguenza i pezzi delle 2 flag.
+http://192.168.123.123:80
+http://192.168.123.123:8000/

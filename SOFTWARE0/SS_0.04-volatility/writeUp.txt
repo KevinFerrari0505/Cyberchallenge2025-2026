@@ -1,0 +1,32 @@
+Analisi del file:
+ELF 64-bit, dinamico, con simboli di debug (-g), non stripped.
+Eseguendolo (o leggendo le stringhe del binario), il programma spiega da solo il proprio comportamento:
+This program does the following:
+1) decodes the flag in memory (function at address: %p)
+2) overwrites the flag (function at address: %p)
+3) exits
+The flag's address is random (this time it is %p), but it will be passed,
+as the first argument, to both functions. If you could only stop time and
+read the flag before it's too late...
+Quindi: la flag viene decodificata e scritta in un buffer sullo stack da decode_flag(), e immediatamente dopo clear_flag() la sovrascrive 
+prima che il programma termini. 
+Il nome della challenge è coerente: la flag è "volatile", esiste solo per una finestra 
+temporale infinitesimale tra le due chiamate.
+Disassemblando main (il binario non è stripped, quindi i nomi delle funzioni sono visibili) si vede chiaramente la sequenza:
+asmlea  rax,[rbp-0x110]      ; buffer della flag sullo stack
+mov  rdi, rax
+call decode_flag          ; 0x40124d
+lea  rax,[rbp-0x110]
+mov  rdi, rax
+call clear_flag           ; 0x40125c  <-- qui la flag viene distrutta
+Il punto critico è l'istruzione subito dopo il ritorno da decode_flag (indirizzo 0x401252): a quel punto la flag è già scritta in chiaro nel buffer [rbp-0x110], ma clear_flag non è ancora stata chiamata.
+Non serve nessuna vera race condition: basta un breakpoint esattamente in quel punto, leggere la memoria, 
+e lasciare che il programma prosegua (o uscire subito, la flag è già in mano):
+bashgdb -q -batch \
+  -ex "break *0x401252" \
+  -ex "run" \
+  -ex "x/s \$rbp-0x110" \
+  ./volatility
+Breakpoint 1, main () at volatility.c:54
+0x7fffffffe860:  "la flag"
+La flag stessa, ironicamente, conferma l'approccio corretto: i breakpoint sono davvero utili.

@@ -1,0 +1,5 @@
+You can freely use our registration system as you will never be an admin.
+
+This is a remote challenge, you can connect to the service with:
+
+nc notadmin.challs.cyberchallenge.it 9032

@@ -1,0 +1,26 @@
+Analizzando il file, otteniamo queste informazioni
+file the_safe
+→ ELF 32-bit LSB executable, Intel 80386, dynamically linked, not stripped
+Essendo il binario non stripped (i simboli sono ancora presenti), una semplice
+strings rivela già moltissimo:
+strings -n 5 the_safe
+Tra i risultati troviamo:
+An absolutely secure password protects The Safe,
+don't waste your time trying to guess it!
+password: 
+you_cAnT_gue55_th1z_s3cur3_p@ssword
+Told ya.
+print_safe_contents
+La stringa you_cAnT_gue55_th1z_s3cur3_p@ssword salta subito all'occhio: 
+è chiaramente la password hardcoded, 
+e c'è pure una funzione chiamata print_safe_contents — esattamente quello che vogliamo invocare.
+Disassemblando main con objdump -d -M intel, si vede la logica classica: fgets legge l'input da stdin, poi viene calcolata la lunghezza con strlen e infine confrontata via strcmp 
+con la stringa hardcoded. Se il confronto ha successo, il flusso salta a print_safe_contents() (che stampa la flag); 
+altrimenti stampa "Told ya." e termina — proprio l'ironia suggerita dal messaggio iniziale del programma.
+l binario è a 32 bit, quindi su un sistema x86_64 serve la libreria libc6:i386 (interprete /lib/ld-linux.so.2). Una volta installata:
+echo "you_cAnT_gue55_th1z_s3cur3_p@ssword" | ./the_safe
+Output:
+An absolutely secure password protects The Safe,
+don't waste your time trying to guess it!
+
+password: la flag

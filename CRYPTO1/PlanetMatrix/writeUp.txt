@@ -1,0 +1,7 @@
+In questa challenge, se noi prendiamo la foto "who-am-I" e la mettiamo su google,
+ci comparirà il famoso Charles Wheatstone, che appunto come dice il nome della
+challenge ha sviluppato il Playfair cipher, una tecnica di cifratura simmetrica,
+basata su un cifrario modoalfabetico a due lettere.
+Non bisogna farlo a mano, ma basta cercare online degli strumenti che data la 
+matrice fornita in foto, vi da la flag.
+Ad esempio io ho usato https://www.dcode.fr/playfair-cipher

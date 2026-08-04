@@ -1,0 +1,1 @@
+Performance is the most important thing when it comes to cryptography. This is a remote challenge, you can connect to the service with: nc benchmark.challs.cyberchallenge.it 9031

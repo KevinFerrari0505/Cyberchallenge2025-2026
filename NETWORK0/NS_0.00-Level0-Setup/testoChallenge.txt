@@ -1,0 +1,10 @@
+Install docker and docker-compose, see:
+
+    https://docs.docker.com/engine/install/
+    https://docs.docker.com/compose/install/
+
+After this, you can execute the exercise scenario with make up.
+
+Once the scenario has started, print the logs of the running containers for finding the flag.
+
+You can stop the scenario with make down and clean the host configuration with make clean.

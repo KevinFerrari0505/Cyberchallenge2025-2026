@@ -1,0 +1,5 @@
+In questa challenge la vulnerabilità è la e troppo piccola (= a 7).
+Facendo un controllo, notiamo che M^7 è minore di n:
+m, exact = gmpy2.iroot(c, 7)
+# exact = True  →  conferma che non c'era mod!
+Quindi basta fare la radice settima di c.

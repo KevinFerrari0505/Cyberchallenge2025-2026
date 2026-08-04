@@ -1,0 +1,6 @@
+Semplicemente bisogna applicare l'algoritmo di cesare in cui ogni carattere è
+"shiftata" di un numero.
+In questo caso basta controllare l'inizio che sappiamo è CCIT.
+Noi abbiamo TTZK, che per ricondurlo a CCIT bisogna fare uno shift di +9.
+Lo shift poi si applica a tutte le lettere e si ottiene la flag.
+

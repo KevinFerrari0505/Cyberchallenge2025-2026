@@ -1,0 +1,7 @@
+In questo caso la vulnerabilità è che il server accetta un primo p arbitrario
+per lo scambio DH. Se p-1 è smooth (tutti fattori primi piccoli), 
+il logaritmo discreto 2^privB mod p è risolvibile in secondi con Pohlig-Hellman.
+
+Quindi forniamo un primo P_WEAK con p-1 smooth (fattore massimo: 2971). 
+Il server calcola pubB = 2^privB mod P_WEAK e ce lo restituisce. 
+Applichiamo Pohlig-Hellman per ricavare privB, poi decifriamo la flag normalmente.

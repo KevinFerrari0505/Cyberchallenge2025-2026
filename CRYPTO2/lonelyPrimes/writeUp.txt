@@ -1,0 +1,3 @@
+La vulnerabilità balza all'occhio, ovvero n = p * p.
+Basta estrarre √n per ottenere p, poi si calcola φ(p²) = p(p-1)
+e si decifra normalmente.

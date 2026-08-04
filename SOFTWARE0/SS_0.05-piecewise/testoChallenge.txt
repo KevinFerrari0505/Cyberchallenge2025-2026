@@ -1,0 +1,3 @@
+This service will give you the flag, piece by piece, if you answer correctly. Scripting the interaction is strongly suggested ;)
+
+nc piecewise.challs.cyberchallenge.it 9110

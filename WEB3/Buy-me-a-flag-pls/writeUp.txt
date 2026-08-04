@@ -1,0 +1,8 @@
+Questa challenge è molto stupida.
+Semplicemente noteremo che se clicchiamo buy flag, dirà che non c'avremo i soldi.
+Cliccando su transfer, possiamo fare il trasferimento ad esempio di 1000 euro
+ma il bottone sarà disabilitato.
+La soluzione è modificare il tag html del bottone e renderlo cliccabile.
+Cliccandolo dirà che solo gli admin possono fare trasferimenti di denario.
+Quello che bisogna fare è prendere l'url, andare su send a bug, incollarlo
+e magicamente avremo i soldi sul conto a sufficienza per comprare la flag.

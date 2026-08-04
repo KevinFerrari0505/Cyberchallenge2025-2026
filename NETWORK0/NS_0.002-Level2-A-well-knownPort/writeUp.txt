@@ -1,0 +1,23 @@
+Come vediamo nella foto, la nostra macchina, quindi l'HOST, ha come indirizzo
+sul nodo 1 sull'interfaccia eth0 192.168.123.123.
+Lo si può verificare anche con il seguente comando:
+docker inspect challenge_files_node1_1 | grep 192.168
+che darà come output
+"IPv4Address": "192.168.123.123"
+"Gateway": "192.168.123.1",
+"IPAddress": "192.168.123.123"
+Poi per capire che tipo di servizio è presente su questo host, usiamo nmap:
+nmap -p- 192.168.123.123 e darà il seguente output:
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-05-05 12:17 CEST
+Nmap scan report for 192.168.123.123
+Host is up (0.00012s latency).
+Not shown: 65534 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+
+Quindi sappiamo che il protocollo è ssh, aperto sulla porta 22.
+Di conseguenza, ci connettiamo in ssh con quell indirizzo con questo comando:
+ssh root@192.168.123.123
+Vi farà una domanda, rispondete yes.
+La password come dice la challenge è citt. Inserita vi darà la flag.
+

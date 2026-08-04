@@ -1,0 +1,7 @@
+Il server cifra con AES-ECB un input controllabile concatenato con la flag. 
+ECB è deterministico: blocchi di plaintext identici producono blocchi di ciphertext identici.
+Quindi essendo che AES lavora su blocchi da 16 byte, se si invia un prefix di k byte di padding, 
+si può far allineare il prossimo byte sconosciuto della flag come ultimo byte di un blocco noto. 
+A quel punto si prova ogni carattere del charset finché il blocco cifrato risultante non matcha quello di riferimento.
+Questo procedimento si ripete fino a quando l'ultimo carattere è }, che comporta
+la fine della flag e di conseguenza la fine del ciclo. 

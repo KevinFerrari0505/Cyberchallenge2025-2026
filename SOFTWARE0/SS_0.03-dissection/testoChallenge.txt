@@ -1,0 +1,3 @@
+You are given an executable containing the flag. However, the program doesn't seem to print anything useful. So, you will probably need to dissect the ELF to find your flag.
+
+MD5: c00ca21d1f0ec6a2f616fc51e59749e8 dissection

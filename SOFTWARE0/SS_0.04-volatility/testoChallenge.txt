@@ -1,0 +1,3 @@
+No, this is not a forensics challenge. Volatility is a tendency to change quickly, as it happens with the flag of this challenge. Can you be fast enough to catch the flag anyway?
+
+MD5: 6adf84673364f9275601078b729da735 volatility

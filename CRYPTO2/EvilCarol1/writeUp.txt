@@ -1,0 +1,6 @@
+In questo caso la vulnerabilità è che non c'è un controllo sulla scelta di g.
+Quindi possiamo tranquillamente inviare g come pubA, in questo modo il server
+calcola:
+pubB = pubA^privB mod p = (g^privA)^privB mod p = g^(privA·privB) mod p
+che è esattamente lo shared secret originale tra Alice e Bob. Il server ce lo
+consegna direttamente come risposta.

@@ -1,0 +1,3 @@
+We managed to dump the traffic from a real bad hacker, and its private keys.
+
+We know he's receiving a secret information, can you retrieve it?

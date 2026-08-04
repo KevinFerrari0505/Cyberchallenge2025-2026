@@ -1,0 +1,7 @@
+
+La challenge si basa su una tecnica classica di DNS exfiltration: 
+la flag viene trasmessa a pezzi nascosti all'interno di record TXT di query DNS, 
+usando come "chiave di ordine" l'ultimo ottetto dell'indirizzo IP nel nome della query.
+Seguendo lo stream UDP, troviamo i pezzi della flag sparsi per lo stream.
+Basta segnarsi il numero negativo (-10, -20, -30, .. , -170), seguire l'ordine e ricostruire la
+flag.

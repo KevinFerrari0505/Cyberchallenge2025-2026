@@ -1,0 +1,12 @@
+In questa challenge come prima cosa bisogna inserire il file con formato.keys
+Questo ci permetterà di ottenere una comunicazione con protocollo Websocket,
+che non è altro che una comunicazione bidirezionale e in tempo reale tra un
+client e un server attraverso singola connessione tcp persistente.
+Seguendo lo stream websocket possiamo notare che è stata giocata una partita
+su skribb.io e continuando a scorrere lo stream si aprirà un pacchetto con una
+serie di comandi per disegnare.
+Quei comandi sono stati usati per disegnare la flag in una partita di skribb.io
+Quello che ho fatto io è stato prendere tutto l'array dei comandi di disegno,
+mandarli in pasto all'OpenAI per farmi generare uno pagina html in cui avviandola
+posso startare la partita e mi disegnerà la flag in tempo reale.
+

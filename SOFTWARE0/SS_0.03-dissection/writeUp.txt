@@ -1,0 +1,21 @@
+Analizzando il file:
+ELF 64-bit PIE, x86-64, dinamico, stripped
+Provando un primo tentativo con strings:
+strings dissection
+→ ... "No flags here, sorry!" ...
+Il nome della challenge e il testo insistono su un punto preciso: bisogna sezionare l'ELF, cioè analizzarne la struttura interna (header, sezioni, segmenti) 
+e non solo il contenuto testuale grezzo. Con readelf -S si ottiene l'elenco di tutte le sezioni del file:
+readelf -S dissection
+Tra le sezioni standard (.text, .rodata, .data, ecc.) ne saltano fuori diverse completamente anomale, posizionate proprio subito dopo .text, con nomi troncati e senza alcun senso a sé stanti:
+[17] CCI
+[18] T{I_
+[19] c
+[20] _d3
+[21] ad_
+[22] sec
+[23] ti
+[24] 0n
+[25] 5}
+
+Queste non sono sezioni reali generate dal compilatore: sono state inserite ad arte modificando la section header table dell'ELF, assegnando come "nome sezione" dei frammenti di stringa nella .shstrtab. 
+strings non li mostra come un'unica stringa proprio perché sono spezzati in più voci separate della tabella dei nomi.

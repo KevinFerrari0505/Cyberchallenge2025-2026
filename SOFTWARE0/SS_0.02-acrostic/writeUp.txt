@@ -1,0 +1,18 @@
+Una volta disassemblato il binario con objdump -d acrostic, si nota che la funzione _start è banale (chiama solo exit(0)), 
+ma la funzione a_great_game — il cui nome è di per sé un indizio — contiene una sequenza di istruzioni che, a un primo sguardo, sembrano "spazzatura" senza senso logico 
+(mix di SSE, x87, istruzioni intere). Applicando però la stessa idea dell'acrostico, stavolta non alle righe di un testo ma alle mnemoniche delle istruzioni assembly, 
+leggendo dall'alto verso il basso la prima lettera di ciascuna:
+test       → t
+haddps     → h
+enter      → e
+lea        → l
+add        → a
+stc        → s
+test       → t
+or         → o
+fadd       → f
+unpcklpd   → u
+sub        → s
+si ottiene thelastofus, cioè "The Last of Us" — perfettamente coerente col nome del simbolo a_great_game ("un grande gioco" — The Last of Us è infatti un celebre videogioco). 
+Le istruzioni stesse non sono mai state pensate per essere eseguite con un senso logico (enter senza leave, operazioni floating point su registri non inizializzati, ecc.): 
+sono lì puramente per il loro mnemonic, scelte ad arte lettera per lettera.

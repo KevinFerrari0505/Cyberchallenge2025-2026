@@ -1,0 +1,33 @@
+Ora vi sono 2 strade, vi spiego la mia.
+1* METODO
+Il pacchetto che ci importa è il frame n.5849, vedremo che l'attaccante ha scaricato
+un file chiamato file2, che contiene un zip chiamato flag.zip.
+Il filtro è frame.number >= 5849 && http.request.method == GET
+La password non sapevo qual era, quindi ho fatto bruteforce su flag.zip per capire la password
+Ho eseguito i seguenti comandi:
+-dato che avevo estratto tutto il traffico http, avevo già preso il file che si chiama file2 che contiene questa lunga stringa di caratteri
+UEsDBBQAAQAIABmKdlDUjcy25AAAAAUCAAAIAAAAZmxhZy50eHQYcOby79i3jTWYC7UZVJbp
+IToyzKMenibecd/V4wDEIwKI4Ti0zGoSS0rqJLa3n6aAOUKeUmQuUrXb4doJ3ZJy4yG+Y1gb
+W1/waWklAredll/B3Cv8g5IyzJ8RFpHmPR9NxDRFHzCe1MUEEGB/w7RMWD50M/It3Ga/eQIE
+zt/He0QIe2A89wW06f9aq4bTE38WsMWhMoKZ7KRU6aiHc5a68cfuvmpDvhGC3TqCk7ACsg20
+zToM0t5Q0u6kaHrmftXrBvECUYJUoIQjHy6qO4zp57vZ3zWEXtDGDnqI2C9NA0yXbXFQSwEC
+PwAUAAEACAAZinZQ1I3MtuQAAAAFAgAACAAkAAAAAAAAACAAAAAAAAAAZmxhZy50eHQKACAA
+AAAAAAEAGABylUhKZQDWAXKVSEplANYBc2pISmUA1gFQSwUGAAAAAAEAAQBaAAAACgEAAAAA
+Da terminale, devo scrivere il seguente comando per poter creare lo zip
+echo "UEsDBBQAAQAIABmKdlDUjcy25AAAAAUCAAAIAAAAZmxhZy50eHQ..." | base64 -d > flag.zip
+
+-Ho provato a fare bruteforce sulla flag.zip con un file chiamato rockyou.txt
+Ho dovuto eseguire con questi comandi:
+wget https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt
+sudo apt install fcrackzip
+fcrackzip -u -D -p rockyou.txt flag.zip 
+
+-Dopo un po' dirà PASSWORD FOUND!!!!: pw == monello
+-Poi fare il comando unzip flag.zip
+-Inserita la password darà il file flag.txt
+
+2* METODO
+Come ho detto nel writeUp del livello 5, nel messaggio del frame 5849, c'era 
+una cosa in più oltre che la flag della challenge del livello 5, ovvero questo
+{SHA}3848d1674b648f1d358ec7d68e1a8e764f11c027
+Questa è la password dello zip, basta decodificarla in SHA1 e vi da la password.
